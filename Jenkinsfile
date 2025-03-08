@@ -1,9 +1,10 @@
 pipeline {
     agent any
 
+       stages {
         stage('Checkout') {
             steps {
-              git branch: 'main', url:'https://github.com/sourav-v/node.js.git'
+                git url: 'https://github.com/sourav-v/node.js.git', branch: 'main'
             }
         }
 
