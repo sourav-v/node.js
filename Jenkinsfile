@@ -4,13 +4,14 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/sourav-v/node.js.git'          }
+                git 'https://github.com/sourav-v/node.js.git'
+            }
         }
 
         stage('Build Docker Image') {
             steps {
                 script {
-                   sh "docker build -t nodejs ."
+                    sh "docker build -t nodejs ."
                 }
             }
         }
@@ -33,4 +34,5 @@ pipeline {
         failure {
             echo 'Pipeline failed!'
         }
+    }
 }
